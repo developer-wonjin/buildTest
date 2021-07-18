@@ -10,6 +10,6 @@ public class TestController {
 
     @GetMapping("/aaa")
     public String aaa(){
-        return "AAAAAAAAAAAAAAAAAAAAA";
+        return "BBBBBBBBBBBBBBB";
     }
 }

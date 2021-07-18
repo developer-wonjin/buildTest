@@ -23,10 +23,17 @@ function App() {
       }, []
   );
 
+  const list = ['a','b','c'].map((alpha,idx)=>
+    <li key={idx}>{alpha}</li>
+  )
+
   return (
       <div className="App">
         <header className="App-header">
           {testStr}
+            <ul>
+                {list}
+            </ul>
         </header>
       </div>
   );
