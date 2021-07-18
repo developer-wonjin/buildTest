@@ -33,18 +33,18 @@ dependencies {
 
 def webappDir = "$projectDir/frontend"
 
-task appNpmInstall(type: NpmTask) {
-    workingDir = file("${webappDir}")
-    args = ["run", "build"]
-}
-
-task copyWebApp(type: Copy) {
-    from 'frontend/build'
-    into "build/resources/main/static"
-}
-
-copyWebApp.dependsOn(appNpmInstall)
-compileJava.dependsOn(copyWebApp)
+//task appNpmInstall(type: NpmTask) {
+//    workingDir = file("${webappDir}")
+//    args = ["run", "build"]
+//}
+//
+//task copyWebApp(type: Copy) {
+//    from 'frontend/build'
+//    into "build/resources/main/static"
+//}
+//
+//copyWebApp.dependsOn(appNpmInstall)
+//compileJava.dependsOn(copyWebApp)
 
 test {
     useJUnitPlatform()
