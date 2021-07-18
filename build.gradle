@@ -35,6 +35,11 @@ def webappDir = "$projectDir/frontend"
 
 task appNpmInstall(type: NpmTask) {
     workingDir = file("${webappDir}")
+    args = ["install"]
+}
+
+task appNpmBuild(type: NpmTask) {
+    workingDir = file("${webappDir}")
     args = ["run", "build"]
 }
 
@@ -43,7 +48,8 @@ task copyWebApp(type: Copy) {
     into "build/resources/main/static"
 }
 
-copyWebApp.dependsOn(appNpmInstall)
+appNpmBuild.dependsOn(appNpmInstall)
+copyWebApp.dependsOn(appNpmBuild)
 compileJava.dependsOn(copyWebApp)
 
 test {
