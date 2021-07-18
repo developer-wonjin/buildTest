@@ -23,7 +23,7 @@ function App() {
       }, []
   );
 
-  const list = ['D','E','F'].map((alpha,idx)=>
+  const list = ['원진','찬우','선경'].map((alpha,idx)=>
     <li key={idx}>{alpha}</li>
   )
 
